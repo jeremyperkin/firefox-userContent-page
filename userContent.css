@@ -39,11 +39,11 @@
 	  	background: var(--nordp-3) !important;
 	}
 	/*search dropdown list result | suggestions */
-	.contentSearchSuggestionTable .contentSearchHeader,
+	.contentSearchSuggestionTable .contentSearchHeader {
+		background: var(--nordp-1) !important;}
 	.contentSearchOneOffsTable > tr:nth-child(2) > td:nth-child(1)
 	{
-		background: var(--nordp-1) !important;
-	}
+		background: var(--nordp-1) !important;}
   }
 @-moz-document domain("torrentday.com") {
 	html, body {
