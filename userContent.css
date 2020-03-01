@@ -1,5 +1,6 @@
 @import url("colors.css");
 
+/* uBlock Origin Color change */
 @-moz-document url-prefix("moz-extension://8ef0eddb-498d-43d9-8d2d-5f5de9f79224/") {
 	body { background-color: #222 !important; color: #ccc !important; }
 	a { color: #8ad !important; }
@@ -28,8 +29,7 @@
 }
 #PanelUI-button { -moz-border-start: 0px !important;  border-image: none !important; }
 
-
-@-moz-document url(about:blank), url(about:newtab){
+@-moz-document url(about:blank), url(about:newtab), url(about:home){
 	/* main background */
 	html, body, #newtab-customize-overlay{
 		background: var(--background) !important;
@@ -39,13 +39,12 @@
 	  	background: var(--nordp-3) !important;
 	}
 	/*search dropdown list result | suggestions */
-	.contentSearchSuggestionTable .contentSearchHeader {
-		background: var(--nordp-1) !important;}
-	.contentSearchOneOffsTable > tr:nth-child(2) > td:nth-child(1)
-	{
-		background: var(--nordp-1) !important;}
+	.contentSearchSuggestionTable .contentSearchHeader { 
+		background: var(--nordp-1)!important}
+	.contentSearchOneOffsTable > tr:nth-child(2) > td:nth-child(1){
+		background: var(--nordp-1)!important}
   }
-@-moz-document domain("torrentday.com") {
+@-moz-document domain("torrentday.com"), url-prefix("www.reddit.com") {
 	html, body {
 	  background-color: var(--background) !important;
 	  background: var(--background) !important;
@@ -71,12 +70,16 @@
 		color: var(--foreground) !important;}
 	#navBarInner {width: 100% !important}
 	#userBar, #userBarWrapper {width: auto !important; background: var(--background) !important;}
-	#uiSearch{
-		background: var(nordp-2);
+	#uiSearch,
+	#uiSearch:after{
+		padding-left: 145px;
+		padding-right: 145px;
+		background: var(--background) !important;
 		width: auto !important ;}
 	#catters {width: 100% !important}
 	table#torrentTable {width: 100% !important}
 	table#torrents.table {background: var(--background) !important}
+	#torrents table {background: var(--background) !important}
 	}
 @-moz-document domain("google.com"), domain("google.ca"), domain("news.ycombinator.com"), domain("https://news.google.com") {
   html, body, #hdtb, #hdtbSum, #appbar, #hnmain, #gsr, #fbar, #before-appbar, #yDmH0d, #gb, .MQsxIb {
@@ -1000,7 +1003,7 @@
 		scrollbar-width: none !important;
 	}
 
-@-moz-document url(about:preferences), url-prefix(about:) {
+@-moz-document url(about:preferences), url-prefix(about:){
 	html, body,
 	#preferences-stack, vbox.navigation, hbox.sticky-container, vbox.dialogBox, vbox.box-inherit dialog-content-box
 		{
@@ -1574,5 +1577,10 @@
 	.highlight .error > :-moz-any(.start-tag,.end-tag,.comment,.cdata,.doctype,.pi,.entity,.attribute-name,.attribute-value) {
 		color: #de7474!important
 	}
-  }
-	
+}
+
+@-moz-document domain("reddit.com") {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, button, cite, code, del, dfn, em, img, input, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		background-color: var(--nordp-0)!important;
+	}
+}
